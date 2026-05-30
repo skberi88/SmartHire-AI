@@ -85,9 +85,8 @@ function ApplicantProfile() {
       isDemo
 
         ? `Passionate frontend developer with 3+ years of experience 
-                  building responsive web applications. Proficient in React, TypeScript, 
-                  and modern CSS frameworks. Love creating beautiful and intuitive user interfaces.`
-
+building responsive web applications. Proficient in React, TypeScript, 
+and modern CSS frameworks. Love creating beautiful and intuitive user interfaces.`
         : ''
     );
 
