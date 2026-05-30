@@ -1,0 +1,15 @@
+.home-btn {
+  color: #10b1cf !important;
+
+  font-weight: 600 !important;
+
+  border-radius: 10px !important;
+
+  transition: all 0.2s ease !important;
+}
+
+.home-btn:hover {
+  background-color: rgba(169, 239, 248, 0.2) !important;
+
+  color: #10b1cf!important;
+}

@@ -1,0 +1,111 @@
+.nav-link {
+  text-decoration: none;
+  color: #ced4da;
+
+  font-weight: 600;
+  font-size: '18px';
+
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  border: 2px transparent;
+  border-top: 3px solid transparent;
+
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: rgb(160, 160, 160);
+
+}
+
+.nav-link.active {
+  color: #10b1cf;
+
+
+  border-top: 3px solid #10b1cf;
+
+}
+
+/* .header {
+  height: 72px;
+
+  background-color: #25262b;
+
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+
+  text-decoration: none;
+
+  color: #ced4da;
+
+  font-weight: 600;
+
+  font-size: 18px;
+
+  padding: 24px 8px 18px 8px;
+
+  border-top: 3px solid transparent;
+
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+
+  color: rgb(160, 160, 160);
+}
+
+.nav-link.active {
+
+  color: #10b1cf;
+
+  border-top: 3px solid #10b1cf;
+} */
+
+.logo-text {
+  color: #10b1cf;
+
+  font-size: 32px;
+
+  font-weight: 700;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.login-btn {
+  color: #10b1cf !important;
+
+  font-weight: 600 !important;
+
+  border-radius: 10px !important;
+
+  transition: all 0.2s ease !important;
+}
+
+.login-btn:hover {
+  background-color: rgba(169, 239, 248, 0.2) !important;
+
+  color: #10b1cf!important;
+}
+
+.menu-item:hover {
+  background-color: rgba(16, 177, 207, 0.08);
+}
+
+.menu-item:hover .mantine-Menu-itemLabel {
+  color: #10b1cf !important;
+}
+
+.menu-item:hover .mantine-Menu-itemSection {
+  color: #10b1cf !important;
+}

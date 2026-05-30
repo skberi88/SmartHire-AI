@@ -1,0 +1,16 @@
+.footer-link {
+  
+  color: #adb5bd;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+
+}
+
+.footer-link:hover {
+
+  color: #10b1cf;
+
+  transform: translateX(4px);
+}

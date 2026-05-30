@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* body {
+  font-family: 'Poppins', sans-serif;
+} */
+
+body {
+
+  margin: 0;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+
+  font-family:
+    Inter,
+    sans-serif;
+}
+
+/* DARK THEME */
+
+body.dark-theme {
+
+  background-color: #25262b;
+
+  color: #f8f9fa;
+}
+
+/* LIGHT THEME */
+
+body.light-theme {
+
+  background-color: #edf6fb;
+
+  color: #1e293b;
+}

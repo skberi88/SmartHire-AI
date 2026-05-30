@@ -1,0 +1,111 @@
+HELP.md
+
+# ==========================================
+# Maven / Spring Boot
+# ==========================================
+
+target/
+.mvn/wrapper/maven-wrapper.jar
+
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ==========================================
+# Local Configuration
+# ==========================================
+
+application-local.properties
+application-dev.properties
+application-prod.properties
+
+# Environment files
+.env
+.env.*
+
+# Secret files
+*.secret
+secrets.properties
+
+# ==========================================
+# Spring Logs
+# ==========================================
+
+logs/
+*.log
+
+# ==========================================
+# STS
+# ==========================================
+
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# ==========================================
+# IntelliJ IDEA
+# ==========================================
+
+.idea
+*.iws
+*.iml
+*.ipr
+
+# ==========================================
+# NetBeans
+# ==========================================
+
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ==========================================
+# VS Code
+# ==========================================
+
+.vscode/
+
+# ==========================================
+# Security Files
+# ==========================================
+
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+
+# ==========================================
+# OS Files
+# ==========================================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# Temporary Files
+# ==========================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ==========================================
+# Uploaded Files
+# ==========================================
+
+uploads/
+storage/
+temp/
