@@ -1327,7 +1327,7 @@ with innovative organizations and creating a strong hiring culture.`
 
                                   ? 'Tanvi (Employer)'
 
-                                  : `${user?.name} (Employer)`
+                                  : `${user?.name}`
                               }
                             </Title>
 

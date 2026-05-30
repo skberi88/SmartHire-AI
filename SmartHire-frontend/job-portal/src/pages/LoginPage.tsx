@@ -128,8 +128,6 @@ function LoginPage() {
 
       const data = await response.json();
 
-      console.log(data);
-
       /*
         Example backend response:
         {

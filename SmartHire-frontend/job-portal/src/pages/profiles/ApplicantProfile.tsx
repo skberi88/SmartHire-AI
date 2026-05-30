@@ -1335,7 +1335,7 @@ and modern CSS frameworks. Love creating beautiful and intuitive user interfaces
 
                                   ? 'Raj (Applicant)'
 
-                                  : `${user?.name} (Applicant)`
+                                  : `${user?.name}`
                               }
                             </Title>
 

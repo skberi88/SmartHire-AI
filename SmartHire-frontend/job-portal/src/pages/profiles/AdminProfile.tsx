@@ -52,7 +52,7 @@ import { motion } from 'framer-motion';
 
 import Header from '../../components/Header';
 
-import googleCloudLogo from '../../assets/logos/googleCloud.png';
+// import googleCloudLogo from '../../assets/logos/googleCloud.png';
 import microsoftLogo from '../../assets/logos/microsoft.png';
 import amazonLogo from '../../assets/logos/amazon.png';
 import metaLogo from '../../assets/logos/meta.png';
@@ -84,10 +84,7 @@ function AdminProfile() {
 
       isDemo
 
-        ? `Platform administrator managing SmartHire AI operations,
-overseeing recruitment workflows, employer verification,
-applicant management, platform analytics,
-and secure hiring experiences.`
+        ? `Platform administrator managing SmartHire AI operations, overseeing recruitment workflows, employer verification, applicant management, platform analytics, and secure hiring experiences.`
 
         : ''
     );
@@ -974,8 +971,8 @@ and secure hiring experiences.`
     companyName?.toLowerCase()
     ) {
 
-      case 'googleCloud':
-        return googleCloudLogo;
+      // case 'googleCloud':
+      //   return googleCloudLogo;
 
       case 'microsoft':
         return microsoftLogo;
@@ -1350,9 +1347,9 @@ and secure hiring experiences.`
                               {
                                 isDemo
 
-                                  ? 'Raj (Applicant)'
+                                  ? 'Smarthire'
 
-                                  : `${user?.name} (Applicant)`
+                                  : `${user?.name}`
                               }
                             </Title>
 
@@ -1361,11 +1358,11 @@ and secure hiring experiences.`
 
                               size="lg"
 
-                              color="#10cf8c"
+                              color="#ff0000"
 
                               variant="light"
                             >
-                              Open To Work
+                              Admin
                             </Badge>
 
                           </Group>
@@ -1381,7 +1378,7 @@ and secure hiring experiences.`
                                     setJobTitle(e.target.value)
                                   }
 
-                                  placeholder="Job Title"
+                                  placeholder="Title"
 
                                   styles={{
                                     input: {
@@ -1519,7 +1516,7 @@ and secure hiring experiences.`
                                   size="22px"
                                   c="#cfaf10"
                                 >
-                                  {jobTitle || 'Enter Your Job Title'}
+                                  {jobTitle || 'Enter Your Title'}
                                 </Text>
 
                                 <Text
@@ -1988,7 +1985,7 @@ and secure hiring experiences.`
 
                         minRows={6}
 
-                        placeholder="Tell recruiters about yourself..."
+                        placeholder="Admin about..."
 
                         styles={{
 
@@ -2662,7 +2659,7 @@ and secure hiring experiences.`
                 color: '#f8f9fa',
               },
             }}
-            label="Job Title"
+            label="Title"
             value={expJobTitle}
             onChange={(e) =>
               setExpJobTitle(
