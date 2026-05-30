@@ -4,6 +4,7 @@ import com.smarthireai.backend.dto.auth.AuthResponseDTO;
 import com.smarthireai.backend.dto.auth.LoginRequestDTO;
 import com.smarthireai.backend.dto.auth.RegisterRequestDTO;
 import com.smarthireai.backend.dto.auth.UserDTO;
+import com.smarthireai.backend.enums.AccountType;
 import com.smarthireai.backend.exception.EmailAlreadyExistsException;
 import com.smarthireai.backend.exception.InvalidPasswordException;
 import com.smarthireai.backend.exception.UserNotFoundException;
@@ -32,12 +33,25 @@ public class UserServiceImpl implements UserService {
         if(repo.existsByEmail(registerDTO.getEmail())){
             throw new EmailAlreadyExistsException("Email Already Registered");
         }
+
+        if(registerDTO.getAccountType() == AccountType.ADMIN){
+            throw new RuntimeException(
+                    "Admin registration is not allowed"
+            );
+        }
+
         User user = User.builder()
                 .name(registerDTO.getName())
                 .email(registerDTO.getEmail())
                 .password(passwordEncoder.encode(registerDTO.getPassword()))
-                .accountType(registerDTO.getAccountType())
                 .build();
+
+        if(registerDTO.getAccountType() == AccountType.EMPLOYER){
+            user.setAccountType(AccountType.EMPLOYER);
+        }
+        else{
+            user.setAccountType(AccountType.APPLICANT);
+        }
 
         User savedUser = repo.save(user);
         // user bnaya, user ko repo me save kiya, fir us se userDto bnake return krdiya

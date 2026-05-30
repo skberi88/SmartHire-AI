@@ -1,5 +1,6 @@
 package com.smarthireai.backend.service.implementation.employer;
 
+import com.smarthireai.backend.dto.admin.AdminJobDTO;
 import com.smarthireai.backend.dto.employer.EmployerJobDTO;
 import com.smarthireai.backend.dto.employer.JobDTO;
 import com.smarthireai.backend.model.auth.User;
@@ -31,7 +32,7 @@ public class JobServiceImpl implements JobService {
         String email = SecurityContextHolder.getContext().getAuthentication().getName();
 
         User employer = userRepo.findUserByEmail(email).orElseThrow(
-                ()->new RuntimeException("User Not Found"));
+                () -> new RuntimeException("User Not Found"));
 
         Job job = Job.builder()
                 .title(jobDTO.getTitle())
@@ -92,8 +93,7 @@ public class JobServiceImpl implements JobService {
                         .active(job.getActive())
                         .noOfApplicants(applicationRepo.countByJob(job))
                         .postedAt(job.getPostedAt())
-                        .build()
-                )
+                        .build())
                 .toList();
     }
 
@@ -149,7 +149,7 @@ public class JobServiceImpl implements JobService {
         User employer = userRepo.findUserByEmail(email).orElseThrow();
         Job job = jobRepo.findById(jobId).orElseThrow();
 
-        if(!job.getEmployer().getId().equals(employer.getId())){
+        if (!job.getEmployer().getId().equals(employer.getId())) {
             throw new RuntimeException("Unauthorized");
         }
         job.setActive(false);
@@ -162,7 +162,7 @@ public class JobServiceImpl implements JobService {
         User employer = userRepo.findUserByEmail(email).orElseThrow();
         Job job = jobRepo.findById(jobId).orElseThrow();
 
-        if(!job.getEmployer().getId().equals(employer.getId())){
+        if (!job.getEmployer().getId().equals(employer.getId())) {
             throw new RuntimeException("Unauthorized");
         }
 
@@ -202,10 +202,27 @@ public class JobServiceImpl implements JobService {
         User employer = userRepo.findUserByEmail(email).orElseThrow();
         Job job = jobRepo.findById(jobId).orElseThrow();
 
-        if(!job.getEmployer().getId().equals(employer.getId())){
+        if (!job.getEmployer().getId().equals(employer.getId())) {
             throw new RuntimeException("Unauthorized");
         }
         job.setActive(true);
         jobRepo.save(job);
+    }
+
+    @Override
+    public List<AdminJobDTO> getAllJobsForAdmin() {
+        return jobRepo.findAll()
+                .stream()
+                .map(job -> AdminJobDTO.builder()
+                        .id(job.getId())
+                        .title(job.getTitle())
+                        .company(job.getCompany())
+                        .employerName(job.getEmployer().getName())
+                        .employerEmail(job.getEmployer().getEmail())
+                        .active(job.getActive())
+                        .noOfApplicants(applicationRepo.countByJob(job))
+                        .postedAt(job.getPostedAt())
+                        .build())
+                .toList();
     }
 }

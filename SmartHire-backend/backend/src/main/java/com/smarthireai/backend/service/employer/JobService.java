@@ -1,7 +1,9 @@
 package com.smarthireai.backend.service.employer;
 
+import com.smarthireai.backend.dto.admin.AdminJobDTO;
 import com.smarthireai.backend.dto.employer.EmployerJobDTO;
 import com.smarthireai.backend.dto.employer.JobDTO;
+import com.smarthireai.backend.model.employer.Job;
 
 import java.util.List;
 
@@ -18,4 +20,6 @@ public interface JobService {
     JobDTO editJob(Long jobId, JobDTO dto);
 
     void reopenJob(Long jobId);
+
+    List<AdminJobDTO> getAllJobsForAdmin();
 }
